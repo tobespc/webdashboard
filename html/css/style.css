@@ -1,0 +1,49 @@
+    html {
+        background-color: #3b4b54;
+    }
+	
+    .container {
+        width: 100%;
+    }
+
+    .chart {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    #memoryGraph {
+        width: 900px;
+        height: 200px;
+        background-color: #3b4b54;
+    }
+
+    #expressGraph {
+        width: 900px;
+        height: 200px;
+        background-color: #3b4b54;
+    }
+
+	
+    #gcGraph {
+        width: 900px;
+        height: 200px;
+        background-color: #3b4b54;
+    }
+
+	
+    #httpGraph {
+        width: 900px;
+        height: 200px;
+        background-color: #3b4b54;
+    }
+
+    #cpuDials {
+        width: 50%;
+    }
+
+    #cpuDials table {
+        margin: 0px auto !important;
+        display: block !important;
+        width: 250px !important;
+    }

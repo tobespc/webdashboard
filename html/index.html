@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"> </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./js/charts.js"> </script>
+  <script src="./js/jquery.min.js"> </script>
+</head>
+<body>
+  <script>
+    $( document ).ready(function() {
+	  initialiseSocketIO();
+    });
+  </script>
+  <div class="container">
+    <div class="chart" id="cpuDials"></div>
+    <div class="chart" id="memoryGraph"></div>
+    <div class="chart" id="gcGraph"></div>
+    <div class="chart" id="expressGraph"></div>
+  </div>
+</body>
+</html>
