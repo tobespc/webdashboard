@@ -5,8 +5,10 @@ var Expresschart;
 function drawExpressChart() {
   Expressdata = new google.visualization.DataTable();
   Expressdata.addColumn('datetime', 'time');
+//  Expressdata.addColumn('string', 'url');
+ // Expressdata.addColumn('string', 'method');
+ // Expressdata.addColumn('number', 'statusCode');
   Expressdata.addColumn('number', 'duration');
-  Expressdata.addColumn({type: 'string', role: 'tooltip'});
 
   Expressoptions = {
     title: 'Express Use',
@@ -141,15 +143,12 @@ function initialiseSocketIO() {
     express = JSON.parse(expressdata);  //parses the data into a JSON array
     if(Expressdata.getNumberOfRows() > 0){
       var oldDate = Expressdata.getValue(0,0).getTime() / 1000; // convert to seconds
-      if(((express['timestamp'] / 1000) - oldDate) > 120){
+      if(((express['time'] / 1000) - oldDate) > 120){
         Expressdata.removeRow(0);            
       }
     }
-    Expressdata.addRow([new Date(express['timestamp']),(express.response.duration), 
-                        'Request: ' +(express.request.method)+'\n'+
-                        'URL: '+(express.request.url)+'\n'+
-                        'Response: ' +(express.response.status)+'\n'+
-                        'Data: ' +(express.process.data)]);
+
+    Expressdata.addRow([new Date(express['time']),(express.duration)]);
     Expresschart.draw(Expressdata, Expressoptions);
   });
 
